@@ -6,14 +6,12 @@ int main()
 	char c;
 	
 	scanf("%hu", &n);
-
-	scanf("\n");
-
+	
 	for (i = 0; i < n; i++) {
-		scanf("%c", &c);
-
+		// skip over non-digit characters
+		do { scanf("%c", &c); } while (c < '0' || c > '9');
+		
 		nrcif = 0;
-
 		while (c >= '0' && c <= '9') {
 			nrcif++;
 
@@ -27,4 +25,5 @@ int main()
 
 	return 0;
 }
+
 // scor 80
