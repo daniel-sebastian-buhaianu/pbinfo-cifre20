@@ -3,20 +3,18 @@
 int main()
 {
 	unsigned short n, i, nrcif, count = 0;
-	char c;
+	unsigned x;
 	
 	scanf("%hu", &n);
 	
 	for (i = 0; i < n; i++) {
-		// skip over non-digit characters
-		do { scanf("%c", &c); } while (c < '0' || c > '9');
+		scanf("%u", &x);
 		
 		nrcif = 0;
-		while (c >= '0' && c <= '9') {
-			nrcif++;
 
-			scanf("%c", &c);
-		}
+		if (x == 0) nrcif = 1;
+
+		while (x) { nrcif++; x /= 10; }
 
 		if (nrcif % 2) count++;
 	}
@@ -25,5 +23,4 @@ int main()
 
 	return 0;
 }
-
-// scor 80
+// scor 100
